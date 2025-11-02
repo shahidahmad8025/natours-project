@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title Natours | #{tour}
+        link(rel='stylesheet' href='css/style.css')
+        link(rel='shortcut icon' type='image/png' href='img/favicon.png')
+    body
+        h1= tour
+        h2= user.toUpperCase()
+        //- Below syntax of writing comment in pug will make it comment but it would be visible in inspect element code
+        // h1 The Park Camper
+    
+        //- h1 The Park Camper
+
+        - const x = 9
+        h2= 2 * x
+        p This is some text 
