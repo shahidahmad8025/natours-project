@@ -9,6 +9,7 @@ console.log(process.env.NODE_ENV);
 
 mongoose
   .connect(DB, {
+    useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
   })
