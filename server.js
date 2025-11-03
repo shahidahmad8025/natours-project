@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 if (process.env.NODE_ENV !== 'production') dotenv.config({ path: './config.env' });
 const app = require('./app');
 const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
-console.log(process.env.NODE_ENV);
+console.log(DB);
 
 mongoose
   .connect(DB, {
@@ -14,7 +14,7 @@ mongoose
     useCreateIndex: true,
     useFindAndModify: false,
   })
-  .then(() => console.log('DB connection successful!'));
+  .then(() => console.log('DB connection successful!', DB));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
