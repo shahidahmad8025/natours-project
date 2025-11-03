@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 // Only load dotenv in development
 if (process.env.NODE_ENV !== 'production') dotenv.config({ path: './config.env' });
 const app = require('./app');
-const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+const DB = process.env.DATABASE.replace('<PASSWORD>', encodeURIComponent(process.env.DATABASE_PASSWORD));
 console.log(DB);
 
 mongoose
